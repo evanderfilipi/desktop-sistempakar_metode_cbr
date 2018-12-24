@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75f60c91-f53a-4d4c-8fdd-6bf06c2f0b88">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="115"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<parameter name="persen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tb_kerusakan.`kd_kerusakan` AS tb_kerusakan_kd_kerusakan,
+     tb_kerusakan.`nama_kerusakan` AS tb_kerusakan_nama_kerusakan,
+     tb_kerusakan.`deskripsi` AS tb_kerusakan_deskripsi,
+     tb_kerusakan.`solusi` AS tb_kerusakan_solusi
+FROM
+     `tb_kerusakan` tb_kerusakan
+WHERE
+kd_kerusakan = $P{kode}]]>
+	</queryString>
+	<field name="tb_kerusakan_kd_kerusakan" class="java.lang.String"/>
+	<field name="tb_kerusakan_nama_kerusakan" class="java.lang.String"/>
+	<field name="tb_kerusakan_deskripsi" class="java.lang.String"/>
+	<field name="tb_kerusakan_solusi" class="java.lang.String"/>
+	<group name="tb_kerusakan_kd_kerusakan">
+		<groupExpression><![CDATA[$F{tb_kerusakan_kd_kerusakan}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="03aa097a-63f8-4b9a-b3e4-1d86821008e3" x="38" y="4" width="481" height="25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RINCIAN DIAGNOSA KERUSAKAN MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a86b4a54-b17e-42c6-95ea-02065b6b04c6" x="38" y="40" width="481" height="40"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HONDA SUPRA X 125]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="d7bd7712-9918-49f0-85f4-b30d16866655" x="0" y="91" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="4.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="449" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0ba3a298-5112-47e0-819b-850c8b94f094" x="183" y="103" width="345" height="126"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kerusakan_deskripsi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5f88d929-7a9b-4ea3-8bd0-28204b155833" x="25" y="71" width="134" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<text><![CDATA[Persentase Kecocokan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e2c37413-6305-400a-81b7-42a57ab29dae" x="25" y="39" width="134" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Kerusakan :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="1e7f861c-104c-4ac3-957d-4e7bebcfd8f3" x="183" y="283" width="345" height="158"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kerusakan_solusi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="79663094-9698-495d-ac7a-14404e3dd5c3" x="25" y="283" width="134" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<text><![CDATA[Solusi :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6ef5154b-b963-482f-bfaf-f601fcac7547" x="183" y="39" width="345" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kerusakan_nama_kerusakan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2c0cb097-a6a9-45dd-b1cf-146dcd97b9e1" x="25" y="103" width="134" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<text><![CDATA[Deskripsi Kerusakan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="854db63a-498a-450b-83ec-febab5590f08" x="25" y="9" width="134" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Kerusakan :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b67a9bda-ba80-4b52-a39c-d7955d2e4dc8" x="183" y="9" width="182" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kerusakan_kd_kerusakan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="9b0ec128-0c8d-43ac-8acb-41f8394cb847" x="0" y="255" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="4733daca-f356-4e38-b68b-3abdae509d89" x="183" y="71" width="182" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{persen}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="37e5b0bd-482e-4443-8c5f-be69980d5e9d" x="455" y="34" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="11" splitType="Stretch"/>
+	</summary>
+</jasperReport>
